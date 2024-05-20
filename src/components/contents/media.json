@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contents_media",
+  "info": {
+    "displayName": "Media"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "iframe": {
+      "type": "string"
+    }
+  }
+}

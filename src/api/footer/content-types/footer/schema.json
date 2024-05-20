@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "footers",
+  "info": {
+    "singularName": "footer",
+    "pluralName": "footers",
+    "displayName": "Footer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "height": {
+      "type": "string"
+    },
+    "copyright_label": {
+      "type": "string"
+    },
+    "dynamicZone": {
+      "type": "dynamiczone",
+      "components": [
+        "footer.footer-section",
+        "footer.icon",
+        "footer.link"
+      ]
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page_publics",
+  "info": {
+    "singularName": "page-public",
+    "pluralName": "page-publics",
+    "displayName": "Page Public",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "path": {
+      "type": "string"
+    },
+    "dynamicZone": {
+      "type": "dynamiczone",
+      "components": [
+        "contents.hero",
+        "contents.cta-section",
+        "contents.show-section",
+        "contents.block",
+        "contents.cta-options",
+        "contents.cta",
+        "contents.feature-text",
+        "contents.galery",
+        "contents.media",
+        "contents.music-feature-single",
+        "contents.music-features",
+        "contents.options-hero",
+        "contents.playlist-section",
+        "contents.project-section",
+        "contents.text"
+      ]
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "navigation"
+      ]
+    },
+    "isHomePage": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

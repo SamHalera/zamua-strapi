@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_contents_feature_texts",
+  "info": {
+    "displayName": "FeatureText",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "positionXText": {
+      "type": "string"
+    },
+    "positionYText": {
+      "type": "string"
+    },
+    "block": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contents.block"
+    },
+    "zIndexText": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    }
+  }
+}

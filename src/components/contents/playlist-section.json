@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_contents_playlist_sections",
+  "info": {
+    "displayName": "PlaylistSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "playlists": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::playlist.playlist"
+    },
+    "title": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "iframe": {
+      "type": "string"
+    },
+    "imageCover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

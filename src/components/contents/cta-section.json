@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_contents_cta_sections",
+  "info": {
+    "displayName": "CTASection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "ctaOptions": {
+      "displayName": "CTAOptions",
+      "type": "component",
+      "repeatable": false,
+      "component": "contents.cta-options"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contents.cta"
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

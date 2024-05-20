@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_contents_music_features",
+  "info": {
+    "displayName": "MusicFeatures",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "musicFeatureSingle": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contents.music-feature-single"
+    }
+  }
+}

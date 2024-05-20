@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_footer_icons",
+  "info": {
+    "displayName": "Icon"
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "iconComponent": {
+      "type": "string"
+    }
+  }
+}

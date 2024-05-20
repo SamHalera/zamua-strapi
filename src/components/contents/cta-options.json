@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_contents_cta_options",
+  "info": {
+    "displayName": "CTAOptions",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "positionYText": {
+      "type": "enumeration",
+      "enum": [
+        "start",
+        "center",
+        "end"
+      ]
+    },
+    "positionXText": {
+      "type": "enumeration",
+      "enum": [
+        "start",
+        "center",
+        "end"
+      ]
+    },
+    "bgImage": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    }
+  }
+}

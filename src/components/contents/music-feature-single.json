@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_contents_music_feature_singles",
+  "info": {
+    "displayName": "MusicFeatureSingle",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
+    },
+    "url_feature": {
+      "type": "string"
+    },
+    "cta": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contents.cta"
+    },
+    "isHoverDisplay": {
+      "type": "boolean",
+      "default": false
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    }
+  }
+}

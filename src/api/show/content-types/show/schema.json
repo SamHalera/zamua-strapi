@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "shows",
+  "info": {
+    "singularName": "show",
+    "pluralName": "shows",
+    "displayName": "Show",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "datetime": {
+      "type": "datetime",
+      "required": true
+    },
+    "name": {
+      "type": "string"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "venue_url": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "location_url": {
+      "type": "string"
+    },
+    "ticket_url": {
+      "type": "string"
+    },
+    "isPassed": {
+      "type": "boolean",
+      "default": false
+    },
+    "isCanceled": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

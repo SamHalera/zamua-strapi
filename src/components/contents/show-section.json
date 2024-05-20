@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_contents_show_sections",
+  "info": {
+    "displayName": "ShowSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "shows": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::show.show"
+    }
+  }
+}

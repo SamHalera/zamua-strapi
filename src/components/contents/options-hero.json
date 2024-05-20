@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_hero_options_heroes",
+  "info": {
+    "displayName": "optionsHero",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "bgImage": {
+      "type": "string"
+    },
+    "positionYText": {
+      "type": "enumeration",
+      "enum": [
+        "start",
+        "center",
+        "end"
+      ]
+    },
+    "height": {
+      "type": "string"
+    },
+    "positionXText": {
+      "type": "enumeration",
+      "enum": [
+        "start",
+        "center",
+        "end"
+      ]
+    }
+  }
+}

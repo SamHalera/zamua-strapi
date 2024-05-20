@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_contents_ctas",
+  "info": {
+    "displayName": "Cta"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "position": {
+      "type": "enumeration",
+      "enum": [
+        "start",
+        "center",
+        "end"
+      ]
+    }
+  }
+}

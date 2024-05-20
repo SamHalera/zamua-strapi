@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_contents_galeries",
+  "info": {
+    "displayName": "Galery"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "title": {
+      "type": "string"
+    },
+    "galeryStyle": {
+      "type": "string"
+    },
+    "limit": {
+      "type": "string"
+    }
+  }
+}

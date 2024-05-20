@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_feature_text_blocks",
+  "info": {
+    "displayName": "Block",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "string"
+    },
+    "height": {
+      "type": "string"
+    },
+    "width": {
+      "type": "string"
+    },
+    "xPosition": {
+      "type": "string"
+    },
+    "yPosition": {
+      "type": "string"
+    },
+    "zIndex": {
+      "type": "string"
+    }
+  }
+}
