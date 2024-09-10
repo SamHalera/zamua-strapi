@@ -21,9 +21,6 @@
         "videos"
       ]
     },
-    "url_feature": {
-      "type": "string"
-    },
     "cta": {
       "type": "component",
       "repeatable": false,
@@ -37,6 +34,13 @@
       "type": "customField",
       "options": {
         "preset": "custom"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "url_feature": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
       },
       "customField": "plugin::ckeditor5.CKEditor"
     }
