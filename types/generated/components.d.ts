@@ -128,7 +128,6 @@ export interface ContentsMusicFeatureSingle extends Schema.Component {
     title: Attribute.String;
     subtitle: Attribute.String;
     image: Attribute.Media;
-    url_feature: Attribute.String;
     cta: Attribute.Component<'contents.cta'>;
     isHoverDisplay: Attribute.Boolean & Attribute.DefaultTo<false>;
     text: Attribute.RichText &
@@ -136,6 +135,13 @@ export interface ContentsMusicFeatureSingle extends Schema.Component {
         'plugin::ckeditor5.CKEditor',
         {
           preset: 'custom';
+        }
+      >;
+    url_feature: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
         }
       >;
   };
