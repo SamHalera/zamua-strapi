@@ -1,27 +1,11 @@
 /**
  * A set of functions called "actions" for `custom`
  */
-import populate from "../services/populate.json";
+
 export default {
   async getPageByPathname(ctx) {
-    console.log("hello");
     try {
       const { pathname } = ctx.request.query;
-
-      // {
-      //   populate: {
-      //     musicFeatures: {
-      //       populate: {
-      //         musicFeaturesSingle: {
-      //           populate: {
-      //             image: true,
-      //           },
-      //         },
-      //       },
-      //     },
-      //   },
-      // },
-      console.log("pathname==>", pathname);
 
       const pages = await strapi.entityService.findMany(
         "api::page-public.page-public",
@@ -42,6 +26,11 @@ export default {
                     cta: true,
                   },
                 },
+                ctaSection: {
+                  populate: {
+                    cta: true,
+                  },
+                },
                 cta: true,
               },
             },
@@ -50,7 +39,6 @@ export default {
       );
       const page = pages[0];
 
-      console.log(page);
       return page;
     } catch (err) {
       ctx.body = err;
