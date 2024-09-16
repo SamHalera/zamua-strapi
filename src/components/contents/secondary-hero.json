@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_contents_secondary_heroes",
+  "info": {
+    "displayName": "secondaryHero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "iconScroll": {
+      "type": "boolean",
+      "default": true
+    },
+    "optionsHero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contents.options-hero"
+    }
+  }
+}

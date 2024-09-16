@@ -75,6 +75,8 @@ export interface ContentsFeatureText extends Schema.Component {
     block: Attribute.Component<'contents.block', true>;
     zIndexText: Attribute.String;
     text: Attribute.RichText;
+    cta: Attribute.Component<'contents.cta'>;
+    model: Attribute.String;
   };
 }
 
@@ -210,6 +212,18 @@ export interface ContentsProjectSection extends Schema.Component {
   };
 }
 
+export interface ContentsSecondaryHero extends Schema.Component {
+  collectionName: 'components_contents_secondary_heroes';
+  info: {
+    displayName: 'secondaryHero';
+  };
+  attributes: {
+    title: Attribute.String;
+    iconScroll: Attribute.Boolean & Attribute.DefaultTo<true>;
+    optionsHero: Attribute.Component<'contents.options-hero'>;
+  };
+}
+
 export interface ContentsShowSection extends Schema.Component {
   collectionName: 'components_contents_show_sections';
   info: {
@@ -296,6 +310,7 @@ declare module '@strapi/types' {
       'contents.options-hero': ContentsOptionsHero;
       'contents.playlist-section': ContentsPlaylistSection;
       'contents.project-section': ContentsProjectSection;
+      'contents.secondary-hero': ContentsSecondaryHero;
       'contents.show-section': ContentsShowSection;
       'contents.text': ContentsText;
       'footer.footer-section': FooterFooterSection;

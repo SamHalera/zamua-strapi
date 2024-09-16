@@ -853,7 +853,8 @@ export interface ApiPagePublicPagePublic extends Schema.CollectionType {
         'contents.options-hero',
         'contents.playlist-section',
         'contents.project-section',
-        'contents.text'
+        'contents.text',
+        'contents.secondary-hero'
       ]
     >;
     type: Attribute.Enumeration<['navigation']>;
