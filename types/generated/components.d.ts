@@ -83,13 +83,14 @@ export interface ContentsFeatureText extends Schema.Component {
 export interface ContentsGalery extends Schema.Component {
   collectionName: 'components_contents_galeries';
   info: {
-    displayName: 'Galery';
+    displayName: 'Gallery';
+    description: '';
   };
   attributes: {
     image: Attribute.Media;
     title: Attribute.String;
-    galeryStyle: Attribute.String;
-    limit: Attribute.String;
+    galleryStyle: Attribute.String;
+    limlit: Attribute.Integer;
   };
 }
 
@@ -109,14 +110,32 @@ export interface ContentsHero extends Schema.Component {
   };
 }
 
+export interface ContentsMediaFrames extends Schema.Component {
+  collectionName: 'components_contents_media_frames';
+  info: {
+    displayName: 'MediaFrames';
+  };
+  attributes: {
+    Media: Attribute.Component<'contents.media', true>;
+    title: Attribute.String;
+  };
+}
+
 export interface ContentsMedia extends Schema.Component {
   collectionName: 'components_contents_media';
   info: {
     displayName: 'Media';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    iframe: Attribute.String;
+    iframe: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
   };
 }
 
@@ -305,6 +324,7 @@ declare module '@strapi/types' {
       'contents.feature-text': ContentsFeatureText;
       'contents.galery': ContentsGalery;
       'contents.hero': ContentsHero;
+      'contents.media-frames': ContentsMediaFrames;
       'contents.media': ContentsMedia;
       'contents.music-feature-single': ContentsMusicFeatureSingle;
       'contents.music-features': ContentsMusicFeatures;

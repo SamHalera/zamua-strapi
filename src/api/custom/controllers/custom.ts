@@ -32,6 +32,8 @@ export default {
                   },
                 },
                 cta: true,
+                Media: true,
+                projectSection: true,
               },
             },
           },

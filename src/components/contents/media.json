@@ -1,7 +1,8 @@
 {
   "collectionName": "components_contents_media",
   "info": {
-    "displayName": "Media"
+    "displayName": "Media",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -9,7 +10,11 @@
       "type": "string"
     },
     "iframe": {
-      "type": "string"
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     }
   }
 }
