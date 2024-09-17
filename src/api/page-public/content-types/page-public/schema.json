@@ -37,7 +37,8 @@
         "contents.playlist-section",
         "contents.project-section",
         "contents.text",
-        "contents.secondary-hero"
+        "contents.secondary-hero",
+        "contents.media-frames"
       ]
     },
     "type": {

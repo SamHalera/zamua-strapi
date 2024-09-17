@@ -854,7 +854,8 @@ export interface ApiPagePublicPagePublic extends Schema.CollectionType {
         'contents.playlist-section',
         'contents.project-section',
         'contents.text',
-        'contents.secondary-hero'
+        'contents.secondary-hero',
+        'contents.media-frames'
       ]
     >;
     type: Attribute.Enumeration<['navigation']>;
@@ -936,6 +937,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
       'api::project-member.project-member'
     >;
     description: Attribute.RichText;
+    dynamicZone: Attribute.DynamicZone<['contents.secondary-hero']>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

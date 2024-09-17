@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_contents_media_frames",
+  "info": {
+    "displayName": "MediaFrames"
+  },
+  "options": {},
+  "attributes": {
+    "Media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "contents.media"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}
