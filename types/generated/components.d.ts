@@ -157,6 +157,7 @@ export interface ContentsMusicFeatures extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
+    bgColor: Attribute.String;
     musicFeatureSingle: Attribute.Component<
       'contents.music-feature-single',
       true

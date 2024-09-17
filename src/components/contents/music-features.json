@@ -9,6 +9,9 @@
     "title": {
       "type": "string"
     },
+    "bgColor": {
+      "type": "string"
+    },
     "musicFeatureSingle": {
       "type": "component",
       "repeatable": true,
