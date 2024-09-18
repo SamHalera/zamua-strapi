@@ -1,3 +1,5 @@
+import { slugifyProject } from "./api/project/services/slugifyProject";
+
 export default {
   /**
    * An asynchronous register function that runs before
@@ -14,5 +16,13 @@ export default {
    * This gives you an opportunity to set up your data model,
    * run jobs, or perform some special logic.
    */
-  bootstrap(/*{ strapi }*/) {},
+  bootstrap({ strapi }) {
+    strapi.db.lifecycles.subscribe({
+      async afterCreate(event) {
+        if (event.model.collectionName === "projects") {
+          await slugifyProject(event);
+        }
+      },
+    });
+  },
 };
