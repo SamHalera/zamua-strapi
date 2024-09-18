@@ -75,19 +75,22 @@ export interface ContentsFeatureText extends Schema.Component {
     block: Attribute.Component<'contents.block', true>;
     zIndexText: Attribute.String;
     text: Attribute.RichText;
+    cta: Attribute.Component<'contents.cta'>;
+    model: Attribute.String;
   };
 }
 
 export interface ContentsGalery extends Schema.Component {
   collectionName: 'components_contents_galeries';
   info: {
-    displayName: 'Galery';
+    displayName: 'Gallery';
+    description: '';
   };
   attributes: {
     image: Attribute.Media;
     title: Attribute.String;
-    galeryStyle: Attribute.String;
-    limit: Attribute.String;
+    galleryStyle: Attribute.String;
+    limlit: Attribute.Integer;
   };
 }
 
@@ -107,14 +110,32 @@ export interface ContentsHero extends Schema.Component {
   };
 }
 
+export interface ContentsMediaFrames extends Schema.Component {
+  collectionName: 'components_contents_media_frames';
+  info: {
+    displayName: 'MediaFrames';
+  };
+  attributes: {
+    Media: Attribute.Component<'contents.media', true>;
+    title: Attribute.String;
+  };
+}
+
 export interface ContentsMedia extends Schema.Component {
   collectionName: 'components_contents_media';
   info: {
     displayName: 'Media';
+    description: '';
   };
   attributes: {
     title: Attribute.String;
-    iframe: Attribute.String;
+    iframe: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
   };
 }
 
@@ -155,6 +176,7 @@ export interface ContentsMusicFeatures extends Schema.Component {
   };
   attributes: {
     title: Attribute.String;
+    bgColor: Attribute.String;
     musicFeatureSingle: Attribute.Component<
       'contents.music-feature-single',
       true
@@ -207,6 +229,18 @@ export interface ContentsProjectSection extends Schema.Component {
       'oneToMany',
       'api::project.project'
     >;
+  };
+}
+
+export interface ContentsSecondaryHero extends Schema.Component {
+  collectionName: 'components_contents_secondary_heroes';
+  info: {
+    displayName: 'secondaryHero';
+  };
+  attributes: {
+    title: Attribute.String;
+    iconScroll: Attribute.Boolean & Attribute.DefaultTo<true>;
+    optionsHero: Attribute.Component<'contents.options-hero'>;
   };
 }
 
@@ -290,12 +324,14 @@ declare module '@strapi/types' {
       'contents.feature-text': ContentsFeatureText;
       'contents.galery': ContentsGalery;
       'contents.hero': ContentsHero;
+      'contents.media-frames': ContentsMediaFrames;
       'contents.media': ContentsMedia;
       'contents.music-feature-single': ContentsMusicFeatureSingle;
       'contents.music-features': ContentsMusicFeatures;
       'contents.options-hero': ContentsOptionsHero;
       'contents.playlist-section': ContentsPlaylistSection;
       'contents.project-section': ContentsProjectSection;
+      'contents.secondary-hero': ContentsSecondaryHero;
       'contents.show-section': ContentsShowSection;
       'contents.text': ContentsText;
       'footer.footer-section': FooterFooterSection;

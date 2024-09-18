@@ -1,27 +1,11 @@
 /**
  * A set of functions called "actions" for `custom`
  */
-import populate from "../services/populate.json";
+
 export default {
   async getPageByPathname(ctx) {
-    console.log("hello");
     try {
       const { pathname } = ctx.request.query;
-
-      // {
-      //   populate: {
-      //     musicFeatures: {
-      //       populate: {
-      //         musicFeaturesSingle: {
-      //           populate: {
-      //             image: true,
-      //           },
-      //         },
-      //       },
-      //     },
-      //   },
-      // },
-      console.log("pathname==>", pathname);
 
       const pages = await strapi.entityService.findMany(
         "api::page-public.page-public",
@@ -29,6 +13,7 @@ export default {
           filters: {
             path: `${pathname}`,
           },
+
           populate: {
             dynamicZone: {
               populate: {
@@ -42,7 +27,14 @@ export default {
                     cta: true,
                   },
                 },
+                ctaSection: {
+                  populate: {
+                    cta: true,
+                  },
+                },
                 cta: true,
+                Media: true,
+                projectSection: true,
               },
             },
           },
@@ -50,42 +42,44 @@ export default {
       );
       const page = pages[0];
 
-      console.log(page);
       return page;
     } catch (err) {
       ctx.body = err;
     }
   },
-};
 
-// populate: {
-//   dynamicZone: {
-//     populate: {
-//       hero: {
-//         populate: {
-//           optionsHero: true,
-//         },
-//       },
-//       musicFeatures: {
-//         populate: {
-//           image: true,
-//           musicFeaturesSingle: true,
-//         },
-//       },
-//     },
-//   },
-// },
-// {
-//   dynamicZone: {
-//     populate: "*",
-//     musicFeatures: {
-//       populate: {
-//         musicFeatureSingle: {
-//           populate: {
-//             image: true,
-//           },
-//         },
-//       },
-//     },
-//   },
-// },
+  async getProjects() {
+    const projects = await strapi.entityService.findMany(
+      "api::project.project",
+      {
+        publicationState: "live",
+        populate: {
+          imageCover: true,
+          project_members: true,
+        },
+      }
+    );
+
+    return projects;
+  },
+  async findProjectBySlug(ctx) {
+    const { slug } = ctx.query;
+
+    const project = await strapi.db.query("api::project.project").findOne({
+      where: {
+        slug,
+      },
+      populate: {
+        imageCover: true,
+        project_members: true,
+        Gallery: {
+          populate: {
+            image: true,
+          },
+        },
+      },
+    });
+
+    return project;
+  },
+};

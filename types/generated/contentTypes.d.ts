@@ -853,7 +853,9 @@ export interface ApiPagePublicPagePublic extends Schema.CollectionType {
         'contents.options-hero',
         'contents.playlist-section',
         'contents.project-section',
-        'contents.text'
+        'contents.text',
+        'contents.secondary-hero',
+        'contents.media-frames'
       ]
     >;
     type: Attribute.Enumeration<['navigation']>;
@@ -928,13 +930,20 @@ export interface ApiProjectProject extends Schema.CollectionType {
     second_title: Attribute.String;
     priority: Attribute.String;
     imageCover: Attribute.Media;
-    images: Attribute.Media;
     project_members: Attribute.Relation<
       'api::project.project',
       'manyToMany',
       'api::project-member.project-member'
     >;
-    description: Attribute.RichText;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    slug: Attribute.String & Attribute.Required & Attribute.Unique;
+    Gallery: Attribute.Component<'contents.galery'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
