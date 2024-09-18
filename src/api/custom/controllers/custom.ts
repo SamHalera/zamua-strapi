@@ -13,6 +13,7 @@ export default {
           filters: {
             path: `${pathname}`,
           },
+
           populate: {
             dynamicZone: {
               populate: {
@@ -46,36 +47,39 @@ export default {
       ctx.body = err;
     }
   },
-};
 
-// populate: {
-//   dynamicZone: {
-//     populate: {
-//       hero: {
-//         populate: {
-//           optionsHero: true,
-//         },
-//       },
-//       musicFeatures: {
-//         populate: {
-//           image: true,
-//           musicFeaturesSingle: true,
-//         },
-//       },
-//     },
-//   },
-// },
-// {
-//   dynamicZone: {
-//     populate: "*",
-//     musicFeatures: {
-//       populate: {
-//         musicFeatureSingle: {
-//           populate: {
-//             image: true,
-//           },
-//         },
-//       },
-//     },
-//   },
-// },
+  async getProjects() {
+    const projects = await strapi.entityService.findMany(
+      "api::project.project",
+      {
+        publicationState: "live",
+        populate: {
+          imageCover: true,
+          project_members: true,
+        },
+      }
+    );
+
+    return projects;
+  },
+  async findProjectBySlug(ctx) {
+    const { slug } = ctx.query;
+
+    const project = await strapi.db.query("api::project.project").findOne({
+      where: {
+        slug,
+      },
+      populate: {
+        imageCover: true,
+        project_members: true,
+        Gallery: {
+          populate: {
+            image: true,
+          },
+        },
+      },
+    });
+
+    return project;
+  },
+};

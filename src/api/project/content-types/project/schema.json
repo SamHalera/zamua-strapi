@@ -33,15 +33,6 @@
         "videos"
       ]
     },
-    "images": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ]
-    },
     "project_members": {
       "type": "relation",
       "relation": "manyToMany",
@@ -49,13 +40,21 @@
       "inversedBy": "projects"
     },
     "description": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
-    "dynamicZone": {
-      "type": "dynamiczone",
-      "components": [
-        "contents.secondary-hero"
-      ]
+    "slug": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "Gallery": {
+      "type": "component",
+      "repeatable": false,
+      "component": "contents.galery"
     }
   }
 }
