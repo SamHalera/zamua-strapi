@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_contents_contact_heroes",
+  "info": {
+    "displayName": "ContactHero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "bgImage": {
+      "type": "string"
+    },
+    "text": {
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "socialIcons": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

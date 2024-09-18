@@ -855,10 +855,11 @@ export interface ApiPagePublicPagePublic extends Schema.CollectionType {
         'contents.project-section',
         'contents.text',
         'contents.secondary-hero',
-        'contents.media-frames'
+        'contents.media-frames',
+        'contents.contact-hero'
       ]
     >;
-    type: Attribute.Enumeration<['navigation']>;
+    type: Attribute.Enumeration<['navigation', 'footer']>;
     isHomePage: Attribute.Boolean & Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
