@@ -16,6 +16,25 @@ export interface ContentsBlock extends Schema.Component {
   };
 }
 
+export interface ContentsContactHero extends Schema.Component {
+  collectionName: 'components_contents_contact_heroes';
+  info: {
+    displayName: 'ContactHero';
+  };
+  attributes: {
+    title: Attribute.String;
+    bgImage: Attribute.String;
+    text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    socialIcons: Attribute.Media;
+  };
+}
+
 export interface ContentsCtaOptions extends Schema.Component {
   collectionName: 'components_contents_cta_options';
   info: {
@@ -106,7 +125,13 @@ export interface ContentsHero extends Schema.Component {
     optionsHero: Attribute.Component<'contents.options-hero'>;
     image: Attribute.Media;
     isHomePage: Attribute.Boolean & Attribute.DefaultTo<false>;
-    text: Attribute.RichText;
+    text: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
   };
 }
 
@@ -318,6 +343,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'contents.block': ContentsBlock;
+      'contents.contact-hero': ContentsContactHero;
       'contents.cta-options': ContentsCtaOptions;
       'contents.cta-section': ContentsCtaSection;
       'contents.cta': ContentsCta;

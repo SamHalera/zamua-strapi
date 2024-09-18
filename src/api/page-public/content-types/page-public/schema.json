@@ -38,13 +38,15 @@
         "contents.project-section",
         "contents.text",
         "contents.secondary-hero",
-        "contents.media-frames"
+        "contents.media-frames",
+        "contents.contact-hero"
       ]
     },
     "type": {
       "type": "enumeration",
       "enum": [
-        "navigation"
+        "navigation",
+        "footer"
       ]
     },
     "isHomePage": {
