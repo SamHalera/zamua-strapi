@@ -15,5 +15,15 @@ export default {
       path: "/custom/findProjectBySlug",
       handler: "custom.findProjectBySlug",
     },
+    {
+      method: "GET",
+      path: "/custom/findPlayLists",
+      handler: "custom.findPlayLists",
+    },
+    {
+      method: "GET",
+      path: "/custom/findPlayListBySlug",
+      handler: "custom.findPlayListBySlug",
+    },
   ],
 };

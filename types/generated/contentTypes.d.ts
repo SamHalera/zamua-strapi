@@ -893,8 +893,21 @@ export interface ApiPlaylistPlaylist extends Schema.CollectionType {
     title: Attribute.String;
     imageCover: Attribute.Media;
     url: Attribute.String;
-    iframe: Attribute.Text;
-    description: Attribute.RichText;
+    iframe: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'toolbar';
+        }
+      >;
+    slug: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
