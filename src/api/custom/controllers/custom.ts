@@ -82,4 +82,32 @@ export default {
 
     return project;
   },
+
+  async findPlayLists() {
+    const playlist = await strapi.entityService.findMany(
+      "api::playlist.playlist",
+      {
+        publicationState: "live",
+        populate: {
+          imageCover: true,
+        },
+      }
+    );
+
+    return playlist;
+  },
+  async findPlayListBySlug(ctx) {
+    const { slug } = ctx.query;
+
+    const playlist = await strapi.db.query("api::playlist.playlist").findOne({
+      where: {
+        slug,
+      },
+      populate: {
+        imageCover: true,
+      },
+    });
+
+    return playlist;
+  },
 };
