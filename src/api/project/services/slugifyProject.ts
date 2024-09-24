@@ -1,11 +1,17 @@
-export const slugifyProject = async (event) => {
-  const project = event.result;
+export const slugifyProject = async (
+  str: string,
+  uid: string,
+  entityId: number
+) => {
+  const slug = str.replace(" ", "_").toLowerCase();
 
-  const slug = project.main_title.replace(" ", "_").toLowerCase();
-
+  const entityName =
+    uid === "api::playlist.playlist"
+      ? "api::playlist.playlist"
+      : "api::project.project";
   const updatedProject = await strapi.entityService.update(
-    "api::project.project",
-    project.id,
+    entityName,
+    entityId,
     {
       data: {
         slug,

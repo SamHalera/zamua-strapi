@@ -17,7 +17,7 @@
     },
     "imageCover": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "required": false,
       "allowedTypes": [
         "images"
@@ -27,10 +27,23 @@
       "type": "string"
     },
     "iframe": {
-      "type": "text"
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
     },
     "description": {
-      "type": "richtext"
+      "type": "customField",
+      "options": {
+        "preset": "toolbar"
+      },
+      "customField": "plugin::ckeditor5.CKEditor"
+    },
+    "slug": {
+      "type": "string",
+      "unique": false,
+      "required": false
     }
   }
 }
