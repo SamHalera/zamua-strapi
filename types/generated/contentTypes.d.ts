@@ -861,6 +861,7 @@ export interface ApiPagePublicPagePublic extends Schema.CollectionType {
     >;
     type: Attribute.Enumeration<['navigation', 'footer']>;
     isHomePage: Attribute.Boolean & Attribute.DefaultTo<false>;
+    priority: Attribute.Integer & Attribute.DefaultTo<1>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

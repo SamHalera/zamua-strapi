@@ -52,6 +52,10 @@
     "isHomePage": {
       "type": "boolean",
       "default": false
+    },
+    "priority": {
+      "type": "integer",
+      "default": 1
     }
   }
 }
