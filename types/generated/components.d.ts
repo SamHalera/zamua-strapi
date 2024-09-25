@@ -124,7 +124,7 @@ export interface ContentsHero extends Schema.Component {
     iconScroll: Attribute.Boolean & Attribute.DefaultTo<true>;
     optionsHero: Attribute.Component<'contents.options-hero'>;
     image: Attribute.Media;
-    isHomePage: Attribute.Boolean & Attribute.DefaultTo<false>;
+    isHomePage: Attribute.Boolean;
     text: Attribute.RichText &
       Attribute.CustomField<
         'plugin::ckeditor5.CKEditor',

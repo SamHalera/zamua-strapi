@@ -30,8 +30,7 @@
       ]
     },
     "isHomePage": {
-      "type": "boolean",
-      "default": false
+      "type": "boolean"
     },
     "text": {
       "type": "customField",
